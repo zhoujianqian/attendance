@@ -1,0 +1,24 @@
+{
+  "name": "attendance",
+  "description": "attendance management system",
+  "main": "index.js",
+  "authors": [
+    "zhoujianqian pengshengbo houshuang liuzhenyu"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "ams"
+  ],
+  "homepage": "https://github.com/zhoujianqian/attendance",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "underscore": "^1.8.3"
+  }
+}
