@@ -34,12 +34,13 @@
 </head>
 <body>
 <form action="index.html" method="post" class="definewidth m20">
+<input type="hidden" name="id" value="{$menu.id}" />
 <table class="table table-bordered table-hover m10">
     <tr>
         <td width="10%" class="tableleft">上级</td>
         <td>
             <select name="parentid">
-            <option value="0">一级菜单</option><option value='1'   />&nbsp;系统管理</option><option value='7'   />&nbsp;班级管理</option>            </select>
+            <option value="0">一级菜单</option><option value='1'   />&nbsp;系统管理</option><option value='7'   />&nbsp;明信片管理</option>            </select>
         </td>
     </tr>
     <tr>

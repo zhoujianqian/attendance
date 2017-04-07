@@ -58,6 +58,6 @@ $(function() {
 
    $("#findPwd_btn").click(function() {
 		$("#login_form").css("display", "none");
-		$("#findPwd_form").css("display", "block");
+		$("findPwd_form").css("display", "block");
 	});
 });

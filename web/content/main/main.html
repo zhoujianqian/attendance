@@ -23,7 +23,7 @@
     <div class="dl-main-nav">
         <div class="dl-inform"><div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div></div>
         <ul id="J_Nav"  class="nav-list ks-clear">
-            <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">系统管理</div></li>		<li class="nav-item dl-selected"><div class="nav-item-inner nav-order">班级管理</div></li>
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-home">考勤管理系统</div></li>
 
         </ul>
     </div>
@@ -37,7 +37,9 @@
 <script type="text/javascript" src="../assets/js/config-min.js"></script>
 <script>
     BUI.use('common/main',function(){
-        var config = [{id:'1',menu:[{text:'系统管理',items:[{id:'12',text:'权限管理',href:'../Node/index.html'},{id:'3',text:'角色管理',href:'../Role/index.html'},{id:'4',text:'用户管理',href:'../User/index.html'},{id:'6',text:'菜单管理',href:'../Menu/index.html'}]}]},{id:'7',homePage : '9',menu:[{text:'班级管理',items:[{id:'9',text:'查询班级',href:'../Node/index.html'}]}]}];
+        var config = [{id:'1',menu:[{text:'系统管理',items: [{id:'1',text:'权限管理',href:'../Node/index.html'},{id:'2',text:'角色管理',href:'../Role/index.html'},{id:'3',text:'用户管理',href:'../User/index.html'},{id:'4',text:'菜单管理',href:'../Menu/index.html'}] }
+        ,{text:'考勤管理',items:[{id:'6',text:'班级管理',href:'../ClassInfo/index.html'}]}]
+        } ];
         new PageUtil.MainPage({
             modulesConfig : config
         });

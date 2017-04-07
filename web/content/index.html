@@ -2,11 +2,12 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-	 <link href="Css/bootstrap.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="Js/bootstrap.js"></script>
-    <script type="text/javascript" src="Js/jquery.js"></script>
-    <script src="Js/bootstrap.min.js"></script>
-    <script src="Js/myscripts/Register.js"></script>
+	   <link href="Css/bootstrap.min.css" rel="stylesheet" />
+       <script type="text/javascript" src="Js/bootstrap.js"></script>
+       <script type="text/javascript" src="Js/jquery.js"></script>
+       <script src="Js/bootstrap.min.js"></script>
+       <script src="Js/myscripts/Register.js"></script>
+    	<script type="text/javascript" src="Js/main.js" ></script>
 		<!--jquery.validate-->
 		<script type="text/javascript" src="Js/jquery.validate.min.js" ></script>
 		<style type="text/css">
@@ -14,10 +15,11 @@
 	font-family:"Microsoft Yahei";
 	font-size:16px;
 	margin:0;
-background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
+    background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
 			.form{background: rgba(255,255,255,0.2);width:400px;margin:100px auto;}
 			#login_form{display: block;}
 			#register_form{display: none;}
+			#findPwd_form{display: none;}
 			.fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}
 			input[type="text"],input[type="password"]{padding-left:26px;}
 			.checkbox{padding-left:21px;}
@@ -61,7 +63,7 @@ background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
 						<div class="form-group">
 				     	<div class="col-sm-8" style="float:right;margin-left:100px	">
 						<a href="javascript:;" id="register_btn" class="" style="color:white">创建账号</a>
-				    	<a href="javascript:;" id="register_btn" class="" style="color:white">忘记密码</a>
+				    	<a href="javascript:;" id="findPwd_btn" class="" style="color:white">忘记密码</a>
 						</div>
 					</div>
 					
@@ -69,7 +71,7 @@ background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
 			</form>
 		</div>
 
-		<div class="form row">
+		<div class="form row" style="margin-top:-100px">
 			<form class="form-horizontal" id="register_form">
 				<h3 class="form-title">创建账号</h3>
 				<div class="col-sm-9 col-md-9">
@@ -128,9 +130,7 @@ background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
             <span id="codenameTip"></span>
         </div>
     </div>
-
-    
-					<div class="form-group">
+				<div class="form-group">
 						<input type="submit" class="btn btn-info" id="back_btn" value="返回"/>
 						<div class="col-sm-offset-2 col-sm-6">
                              <button type="button" id="submit" class="btn btn-primary">立即注册</button>
@@ -140,6 +140,42 @@ background: #fff url(Images/4.jpg) 50% 0 no-repeat;}
 			</form>
 		</div>
 		</div>
-	<script type="text/javascript" src="Js/main.js" ></script>
+				
+		
+	<div class="form row" style="margin-top:-100px">
+			<form class="form-horizontal" id="findPwd_form">
+				<h3 class="form-title">找回密码</h3>
+				<div class="col-sm-9 col-md-9">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-4 control-label"><span class="form-required"> * </span>手机号</label>
+        <div class="col-sm-6">
+            <div style="float: left;">
+                <input id="phonum" type="text" class="form-control" style="width: 240px;">
+            </div>
+            <div style="float: left;">
+                <input class="btn btn-info" type="button" id="getcode" value="点击获取手机验证码" />
+                <span id="telephonenameTip"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-4 control-label"><span class="form-required">验证码</label>
+        <div class="col-sm-6">
+            <input style="width: 240px;" class="form-control" id="codename">
+            <span id="codenameTip"></span>
+        </div>
+    </div>
+				<div class="form-group">
+						<input type="submit" class="btn btn-info" id="back_btn" value="返回"/>
+						<div class="col-sm-offset-2 col-sm-6">
+                             <button type="button" id="submit" class="btn btn-primary">找回密码</button>
+                      </div>
+					</div>
+				</div>
+			</form>
+		</div>
+		</div>
+
 	</body>
 </html>

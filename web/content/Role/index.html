@@ -51,7 +51,7 @@
                 var items_per_page = $('#items_per_page').val();
                 var max_elem = Math.min((page_index+1) * items_per_page, members.length);
                 var newcontent = '';
-                newcontent +='<table class="table table-bordered table-hover definewidth m10">';
+                newcontent +='<table class="table table-bordered  definewidth m10">';
                     newcontent += '<thead> <tr> <th>角色id</th>  <th>角色姓名</th> <th>角色名称</th> <th>操作</th> </tr> </thead>'
                 // Iterate through a selection of the content and build an HTML string
                 for(var i=page_index*items_per_page;i<max_elem;i++)
@@ -123,8 +123,7 @@
         <!-- This form is just to demonstrate the whole range of options and display styles. -->
 		<form name="paginationoptions">
 			<p><label for="items_per_page">每页显示的条数</label><input type="text" value="5" name="items_per_page" id="items_per_page" class="numeric"/></p>
-			<p><label for="num_display_entries">Number of pagination links shown</label><input type="text" value="10" name="num_display_entries" id="num_display_entries" class="numeric"/></p>
-			<p><label for="num">Number of start and end points</label><input type="text" value="2" name="num_edge_entries" id="num_edge_entries" class="numeric"/></p>
+		
 			<p><label for="prev_text">"Previous" label</label><input type="text" value="Prev" name="prev_text" id="prev_text"/></p>
 			<p><label for="next_text">"Next" label</label><input type="text" value="Next" name="next_text" id="next_text"/></p>
 			<input type="button" id="setoptions" value="Set options" />
