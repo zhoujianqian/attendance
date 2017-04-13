@@ -1,0 +1,25 @@
+{
+  "name": "attendance",
+  "description": "考勤管理系统",
+  "main": "app.js",
+  "authors": [
+    "zhoujianqian houshuang pengshengbo liuzhenyu"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "angular": "^1.6.3",
+    "angular-messages": "^1.6.3",
+    "angular-ui-router": "^0.4.2"
+  }
+}
