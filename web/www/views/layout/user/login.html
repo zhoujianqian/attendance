@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login One</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body class="templatemo-bg-gray">
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="margin-bottom-15">登录</h1>
+        <form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" action="#" method="post" id="login">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="control-wrapper">
+                        <label for="username" class="control-label fa-label"><i class="fa fa-user fa-medium"></i></label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="control-wrapper">
+                        <label for="password" class="control-label fa-label"><i class="fa fa-lock fa-medium"></i></label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" autocomplete="off">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="checkbox control-wrapper">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="control-wrapper">
+                        <input type="submit" value="登录" class="btn btn-info" ng-click="toMain()">
+                        <a ui-sref="findpwd" class="text-right pull-right">忘记密码?</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label>Login with: </label>
+                    <div class="inline-block">
+                        <a href="#"><i class="fa fa-facebook-square login-with"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square login-with"></i></a>
+                        <a href="#"><i class="fa fa-google-plus-square login-with"></i></a>
+                        <a href="#"><i class="fa fa-tumblr-square login-with"></i></a>
+                        <a href="#"><i class="fa fa-github-square login-with"></i></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="text-center">
+            <a ui-sref="register" class="templatemo-create-new">注册账号 <i class="fa fa-arrow-circle-o-right"></i></a>
+        </div>
+    </div>
+</div>
+<!-- Errors container -->
+<div class="errors-container">
+
+
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function($)
+    {
+        // Reveal Login form
+        setTimeout(function(){ $(".fade-in-effect").addClass('in'); }, 1);
+
+
+        // Validation and Ajax action
+        $("form#login").validate({
+            rules: {
+                username: {
+                    required: true
+                },
+
+                password: {
+                    required: true
+                }
+            },
+
+            messages: {
+                username: {
+                    required: 'Please enter your username.'
+                },
+
+                password: {
+                    required: 'Please enter your password.'
+                }
+            },
+
+            // Form Processing via AJAX
+            submitHandler: function(form)
+            {
+                show_loading_bar(70); // Fill progress bar to 70% (just a given value)
+
+                var opts = {
+                    "closeButton": true,
+                    "debug": false,
+                    "positionClass": "toast-top-full-width",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+               /* if ($(form).find('#username').val()=='admin' && $(form).find('#password').val()=='admin'){
+                    $state.g
+                }*/
+
+
+                $.ajax({
+                    url: "data/login-check.php",
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        do_login: true,
+                        username: $(form).find('#username').val(),
+                        password: $(form).find('#password').val(),
+                    },
+                    success: function(resp)
+                    {
+                        show_loading_bar({
+                            delay: .5,
+                            pct: 100,
+                            finish: function(){
+
+                                // Redirect after successful login page (when progress bar reaches 100%)
+                                if(resp.accessGranted)
+                                {
+                                    window.location.href = 'dashboard-1.html';
+                                }
+                            }
+                        });
+
+
+                        // Remove any alert
+                        $(".errors-container .alert").slideUp('fast');
+
+                        // Show errors
+                        if(resp.accessGranted == false)
+                        {
+                            $(".errors-container").html('<div class="alert alert-danger">\
+												<button type="button" class="close" data-dismiss="alert">\
+													<span aria-hidden="true">&times;</span>\
+													<span class="sr-only">Close</span>\
+												</button>\
+												' + resp.errors + '\
+											</div>');
+
+
+                            $(".errors-container .alert").hide().slideDown();
+                            $(form).find('#password').select();
+                        }
+                    }
+                });
+
+            }
+        });
+
+        // Set Form focus
+        $("form#login .form-group:has(.form-control):first .form-control").focus();
+    });
+</script>
+
+</body>
+</html>
