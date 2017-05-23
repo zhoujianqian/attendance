@@ -34,16 +34,12 @@
                         <i class="linecons-cog"></i>
                     </a>
                 </div>
-
-
             </header>
-
-
 
             <ul id="main-menu" class="main-menu">
                 <!-- add class "multiple-expanded" to allow multiple submenus to open -->
                 <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
-
+                <!--系统设置菜单项-->
                 <li>
                     <a href="#">
                         <i class="linecons-cloud"></i>
@@ -77,6 +73,44 @@
                                 <span class="title" style="font-size: 16px">数据字典</span>
                             </a>
                             <div ui-view="dataContainer"></div>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--列表设置菜单项-->
+                <li>
+                    <a href="#">
+                        <i class="linecons-cloud"></i>
+                        <span class="title" style="font-size: 20px">列表设置</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a ui-sref="app.classlist">
+                                <i class="entypo-flow-line"></i>
+                                <span class="title" style="font-size: 16px">班级列表</span>
+                            </a>
+                            <div ui-view="listContainer"></div>
+                        </li>
+                        <li>
+                            <a ui-sref="app.studentlist">
+                                <i class="entypo-flow-line"></i>
+                                <span class="title" style="font-size: 16px">学生列表</span>
+                            </a>
+                            <div ui-view="listContainer"></div>
+                        </li>
+                        <li>
+                            <a ui-sref="app.teachplanlist">
+                                <i class="entypo-flow-line"></i>
+                                <span class="title" style="font-size: 16px">教学计划列表</span>
+                            </a>
+                            <div ui-view="listContainer"></div>
+                        </li>
+                        <li>
+                            <a ui-sref="app.signrecordlist">
+                                <i class="entypo-flow-line"></i>
+                                <span class="title" style="font-size: 16px">签到记录列表</span>
+                            </a>
+                            <div ui-view="listContainer"></div>
                         </li>
                     </ul>
                 </li>
