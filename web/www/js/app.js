@@ -13,7 +13,7 @@ angular.module('starter', ['ui.router','starter.controllers'])
        url: '/main',
       views: {
              'mainContainer':
-              {template:"<div>考勤管理系统，现在是2017年4月12号</div>"}
+              {templateUrl:'views/layout/main.html'}
                 // , controller: 'PlaylistCtrl'
    }
    })
