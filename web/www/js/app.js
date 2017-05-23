@@ -17,28 +17,30 @@ angular.module('starter', ['ui.router','starter.controllers'])
                 // , controller: 'PlaylistCtrl'
    }
    })
-        .state('app.user',{     //登录界面
+
+        .state('app.user',{     //角色界面
             url: '/data',
             views:{
                 'mainContainer':
-                    {templateUrl: 'views/layout/system/user.html'}
+                {templateUrl: 'views/layout/system/user.html'}
             }
         })
-        .state('app.role',{     //登录界面
+
+        .state('app.role',{     //角色界面
             url: '/data',
             views:{
                 'mainContainer':
                     {templateUrl: 'views/layout/system/role.html'}
             }
         })
-        .state('app.authority',{     //登录界面
+        .state('app.authority',{     //权限界面
             url: '/data',
             views:{
                 'mainContainer':
                     {templateUrl: 'views/layout/system/authority.html'}
             }
         })
-        .state('app.data',{     //登录界面
+        .state('app.data',{     //数据字典界面
             url: '/data',
             views:{
                 'mainContainer':
@@ -51,15 +53,53 @@ angular.module('starter', ['ui.router','starter.controllers'])
         templateUrl: 'views/layout/user/login.html'
          //,controller: 'LoginCtrl'
     })
-        .state('register',{     //登录界面
+        .state('register',{     //注册界面
             url: '/register',
             templateUrl: 'views/layout/user/register.html'//,
         })
-    .state('findpwd',{     //登录界面
+    .state('findpwd',{     //找回密码界面
         url: '/finfpwd',
         templateUrl: 'views/layout/user/findpwd.html'//,
-    });
+    })
 
+    //列表界面
+    .state('app.classlist',{      //班级列表界面
+        url: '/data',
+        views:{
+            'mainContainer':
+            {templateUrl: 'views/layout/list/classlist.html'}
+        }
+    })
+    .state('app.signrecordlist',{      //学生签到列表界面
+            url: '/data',
+            views:{
+                'mainContainer':
+                {templateUrl: 'views/layout/list/signrecordlist.html'}
+            }
+        })
+        .state('app.studentlist',{      //学生列表界面
+            url: '/data',
+            views:{
+                'mainContainer':
+                {templateUrl: 'views/layout/list/studentlist.html'}
+            }
+        })
+        .state('app.teachplanlist',{      //学生签到列表界面
+            url: '/data',
+            views:{
+                'mainContainer':
+                {templateUrl: 'views/layout/list/teachplanlist.html'}
+            }
+        })
+
+    .state('app.detailplanlist',{      //教学计划详细列表界面
+        url: '/data',
+        views:{
+            'mainContainer':
+            {templateUrl: 'views/layout/list/detailplanlist.html'}
+        }
+    });
+    
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/main');
     }]);
