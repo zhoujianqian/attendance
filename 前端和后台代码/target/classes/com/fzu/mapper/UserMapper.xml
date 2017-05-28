@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.fzu.dao.UserDao">  
+<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->  
+    <resultMap id="BaseResultMap" type="com.fzu.model.Student">  
+        <result column="sID" property="sID"  />  
+        <result column="sname" property="sname"/>  
+        <result column="ssex" property="ssex"/>  
+        <result column="phone" property="phone" />  
+         <result column="school" property="school"/>  
+        <result column="classID" property="classID" /> 
+        <result column="spwd" property="spwd" /> 
+    </resultMap>  
+    <!-- 查询单条记录 -->  
+    <select id="selectUserById"  resultMap="BaseResultMap">  
+        SELECT * FROM student WHERE sID = #{sID}  and spwd = #{spwd}
+    </select>  
+</mapper>  
